@@ -18,6 +18,7 @@ const Navigation = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
+    // eslint-disable-next-line react-native/no-inline-styles
     <View style={{ flex: 1 }}>
       <Tab.Navigator
         tabBar={() => null} // Hide the default tab bar

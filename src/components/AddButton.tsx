@@ -4,9 +4,9 @@ import { Button, View } from 'react-native';
 const AddButton: React.FC = () => {
     return (
         <View>
-            <Button title="Click Me" onPress={() => {console.log("pressed")}} />
+            <Button title="Click Me" onPress={() => {console.log('pressed');}} />
         </View>
     );
-}
+};
 
 export default AddButton;
