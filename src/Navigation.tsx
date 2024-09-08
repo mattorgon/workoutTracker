@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { View, StyleSheet } from 'react-native';
+import { FAB } from 'react-native-paper'; // Import the FAB from react-native-paper
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import HomeScreen from './screens/HomeScreen'; // Import your screens
 import WorkoutsScreen from './screens/WorkoutsScreen';
 import ProfileScreen from './screens/ProfileScreen';
@@ -9,6 +11,8 @@ import ProfileScreen from './screens/ProfileScreen';
 
 // Create the Top Tab Navigator
 const Tab = createMaterialTopTabNavigator();
+
+const AddIcon = () => <MaterialIcons name="add" size={24} color="white" />;
 
 const Navigation = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -39,6 +43,13 @@ const Navigation = () => {
           />
         ))}
       </View>
+
+      {/* Floating Action Button */}
+      <FAB
+        style={styles.fab}
+        icon={AddIcon}  // Use add_circle icon
+        onPress={() => console.log('FAB Pressed')}
+      />
     </View>
   );
 };
@@ -62,6 +73,25 @@ const styles = StyleSheet.create({
   },
   inactiveDot: {
     backgroundColor: '#cccccc',
+  },
+  fab: {
+    position: 'absolute',
+    margin: 16,
+    right: 0,
+    bottom: 0,  // Position at the bottom-right corner
+    backgroundColor: '#42a5f5',
+    borderRadius: 50,
+    shadowColor: '#000',  // Shadow color (black)
+    shadowOffset: { width: 5, height: 5 },  // Offset for the shadow
+    shadowOpacity: 0.2,  // Opacity of the shadow
+    shadowRadius: 2.5,  // Blur radius for the shadow
+  },
+  icon: {
+    width: 48,  // Adjust size to match your FAB
+    height: 48,
+    resizeMode: 'contain',
+    tintColor: 'white', // Optional: Apply tint color to match the button
+    backgroundColor: '#42a5f5',
   },
 });
 
