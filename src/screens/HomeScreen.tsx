@@ -18,7 +18,6 @@ const HomeScreen = () => {
           <GraphTabsNavigator />
         </View>
       </PanGestureHandler>
-
       <NavButton
         icon="bar-chart"
         title="Averages"
@@ -51,14 +50,20 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    //backgroundColor: 'blue',
   },
   graphTabsContainer: {
-    height: '40%',  // Adjust the height of the graph section
+    height: '30%',  // Adjust this height to give the graph more space
+    justifyContent: 'center',  // Center the graph content vertically within this space
   },
   text: {
     fontSize: 24,
     fontWeight: 'bold',
+  },
+  navButtonsContainer: {
+    flex: 1,  // Let the buttons take up the remaining space
+    paddingHorizontal: 20,
+    paddingBottom: 20,
   },
 });
 

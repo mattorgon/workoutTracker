@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     alignItems: 'center',
+    alignSelf: 'center',
     width: '90%',
     height: '8%',
     padding: 15,
