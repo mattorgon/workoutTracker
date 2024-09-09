@@ -26,7 +26,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import 'react-native-gesture-handler'; // This import must be at the top
 import { NavigationContainer } from '@react-navigation/native';
-import Navigation from './src/Navigation';  // Import your Navigation component
+import Navigation from './src/navigation/Navigation';  // Import your Navigation component
 
 // type SectionProps = PropsWithChildren<{
 //   title: string;

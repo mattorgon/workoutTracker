@@ -3,9 +3,17 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import { View, StyleSheet } from 'react-native';
 import { FAB } from 'react-native-paper'; // Import the FAB from react-native-paper
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import HomeScreen from './screens/HomeScreen'; // Import your screens
-import WorkoutsScreen from './screens/WorkoutsScreen';
-import ProfileScreen from './screens/ProfileScreen';
+import WorkoutsScreen from '../screens/WorkoutsScreen';
+import ProfileScreen from '../screens/ProfileScreen';
+//import HomeStackNavigator from './HomeStackNavigator';
+//import HomeScreen from '../screens/HomeScreen';
+import HomeStackNavigator from './HomeStackNavigator';
+
+export type TabParamList = {
+  Home: undefined;
+  Workouts: undefined;
+  Profile: undefined;
+};
 
 // const { width } = Dimensions.get('window');
 
@@ -27,7 +35,7 @@ const Navigation = () => {
           state: (e) => setCurrentIndex(e.data.state.index), // Track active screen
         }}
       >
-        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Home" component={HomeStackNavigator} />
         <Tab.Screen name="Workouts" component={WorkoutsScreen} />
         <Tab.Screen name="Profile" component={ProfileScreen} />
       </Tab.Navigator>
